@@ -1804,7 +1804,7 @@ class DataRepository @Inject constructor(
         }
 
         val startId = getOrgDateTimeId(range.startTime)
-        val endId = if (range.endTime != null) getOrgDateTimeId(range.endTime) else null
+        val endId = if (range.endTime != null) getOrgDateTimeId(range.endTime!!) else null
 
         return db.orgRange().insert(OrgRange(0, str, startId, endId))
     }
